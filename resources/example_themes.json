@@ -1,0 +1,14 @@
+[
+    {
+        "name": "teamwork",
+        "description": "Works well with others, facilitates collaboration and encourages the sharing of ideas."
+    },
+    {
+        "name": "customer focus",
+        "description": "Consistently views strategy and projects by putting the customer's needs in mind, facilitaing conversations with customers and product."
+    },
+    {
+        "name": "job specific skills",
+        "description": "The use of primarily hard skills needed for a specific role."
+    }
+]

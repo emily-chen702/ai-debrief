@@ -1,8 +1,9 @@
 import json
 from sentence_transformers import SentenceTransformer
+import os
 
 class TopicModel:
-    def __init__(self, model_name: str, themes: dict):
+    def __init__(self, model_name: str, themes: dict | None = None):
         # self.model_name = model_name
         self.model = self.create_sentence_transformer(model_name)
         if themes:
@@ -27,11 +28,10 @@ class TopicModel:
     def compute_theme_scores(self, threshold: float, sentence: str) -> str | list[str]:
         # Compute embeddings for both lists
         sentence_embedding = self.model.encode(sentence)
-        topic_embeddings = self.model.encode(self.themes.values())
+        topic_embeddings = self.model.encode(list(self.themes.values()))
 
         # Compute cosine similarities
         similarities = self.model.similarity(sentence_embedding, topic_embeddings)[0]
-
 
         # Determine the themes to return based on threshold or maximum similarity 
         result_themes = []
