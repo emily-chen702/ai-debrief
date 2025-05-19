@@ -1,0 +1,16 @@
+You're an assistant helping users track personal productivity, wellness, and priorities.
+
+Given this content from a user's daily log:
+
+"{{ example_sentence }}"
+
+1. Summarize its meaning in 1 sentence.
+2. Assign a sentiment (positive, neutral, negative).
+3. If possible, extract any task or goal.
+
+Respond in JSON format like this:
+{
+  "summary": "...",
+  "sentiment": "...",
+  "task": "..." // leave blank if none
+}
